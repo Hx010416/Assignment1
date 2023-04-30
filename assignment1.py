@@ -125,5 +125,3 @@ def save_places_to_file(filename, places):
 
 if __name__ == '__main__':
     main()
-
-
