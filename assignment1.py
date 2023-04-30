@@ -1,8 +1,8 @@
 """
 Replace the contents of this module docstring with your own details
 Name:Hu Xiao
-Date started:
-GitHub URL:
+Date started:23/04、2023
+GitHub URL:https://github.com/Hx010416/Assignment1
 """
 import csv
 import random
