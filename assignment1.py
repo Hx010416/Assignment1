@@ -1,8 +1,8 @@
 """
 Replace the contents of this module docstring with your own details
 Name:Hu Xiao
-Date started:23/04/2023
-GitHub URL:https://github.com/Hx010416/Assignment1
+Date started:
+GitHub URL:
 """
 import csv
 import random
@@ -16,8 +16,7 @@ def main():
         choice = get_valid_choice()
         if choice == 'Q':
             print("Goodbye!")
-            save_places_to_file(places, 'temp.csv')
-            save_places_to_file(places, 'places.csv')
+            save_places_to_file('places.csv', places)
             break
         elif choice == 'L':
             display_places(places)
@@ -27,7 +26,6 @@ def main():
             add_place(places)
         elif choice == 'M':
             mark_visited(places)
-
 
 
 def load_places_from_file(filename):
@@ -115,13 +113,15 @@ def mark_visited(places):
         print(f"{place_to_mark['name']}, {place_to_mark['country']} marked as visited.")
     else:
         print("No unvisited places.")
+
 def save_places_to_file(filename, places):
     with open(filename, 'w', newline='') as file:
         writer = csv.writer(file)
         for place in places:
-            writer.writerow([place['name'], place['country'], place['priority'], 'v' if place['visited'] else 'n'])
-
+            visited_status = 'v' if place['visited'] else 'n'
+            writer.writerow([place['name'], place['country'], place['priority'], visited_status])
 
 
 if __name__ == '__main__':
     main()
+
